@@ -69,7 +69,7 @@ Before you begin, **update Node, NPM, ESLint, and Stylelint**
 
 ### Task Running with Gulp
 
-You must employ Gulp, **version 4.0.2**, as the task runner, with workflows for development and production.
+You must employ Gulp, **version 4.0.2**, as the task runner, with workflows for development and production. **Only include the tasks requested below.**
 
 #### Development
 
