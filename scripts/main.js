@@ -4,6 +4,7 @@ const modalContentPane = document.querySelector('.modal-content-pane'); // Modal
 
 const showModal = () => {
   modalPanel.style.display = `block`;
+  console.log('Modal should be visible now');
 };
 
 const hideModal = (event) => {
