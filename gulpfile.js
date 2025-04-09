@@ -1,93 +1,34 @@
-const { src, dest, watch, series, parallel } = require('gulp');
-const eslint = require('gulp-eslint');
-const stylelint = require('gulp-stylelint');
-const babel = require('gulp-babel');
-const sourcemaps = require('gulp-sourcemaps');
-const connect = require('gulp-connect');
+const gulp = require("gulp");
+const eslint = require("gulp-eslint");
+const stylelint = require("gulp-stylelint");
+const uglify = require("gulp-uglify");
+const browserSync = require("browser-sync").create();
 
-const paths = {
-  html: 'index.html',
-  css: 'styles/**/*.css',
-  js: 'scripts/**/*.js'
-};
-
-const lintJS = () => {
-  return src(paths.js)
+gulp.task("lint-js", () => {
+  return gulp.src("scripts/**/*.js")
     .pipe(eslint())
-    .pipe(eslint.format());
-};
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
 
-const lintCSS = () => {
-  return src(paths.css)
+gulp.task("lint-css", () => {
+  return gulp.src("styles/**/*.css")
     .pipe(stylelint({
-      reporters: [
-        { formatter: 'string', console: true }
-      ]
+      reporters: [{ formatter: "string", console: true }]
     }));
-};
+});
 
+gulp.task("dev", () => {
+  browserSync.init({ server: "./" });
 
-const transpileJS = () => {
-  return src(paths.js)
-    .pipe(sourcemaps.init())
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest('scripts/'))
-    .pipe(connect.reload());
-};
+  gulp.watch("styles/**/*.css", gulp.series("lint-css", browserSync.reload));
+  gulp.watch("scripts/**/*.js", gulp.series("lint-js", browserSync.reload));
+});
 
-const serve = (done) => {
-  connect.server({
-    root: '.',
-    livereload: true
-  });
-  done();
-};
+gulp.task("build", () => {
+  return gulp.src("scripts/**/*.js")
+    .pipe(uglify())
+    .pipe(gulp.dest("prod/scripts"));
+});
 
-const watchFiles = () => {
-  watch(paths.js, series(lintJS, transpileJS));
-  watch(paths.css, lintCSS);
-  watch([paths.html, paths.css, paths.js], () => {
-    return src(paths.html).pipe(connect.reload());
-  });
-};
-
-exports.default = series(
-  parallel(lintJS, lintCSS, transpileJS),
-  serve,
-  watchFiles
-);
-
-const clean = require('gulp-clean');
-const cleanCSS = require('gulp-clean-css');
-const terser = require('gulp-terser');
-
-const cleanProd = () => {
-  return src('prod', { read: false, allowEmpty: true })
-    .pipe(clean());
-};
-
-const minifyCSS = () => {
-  return src(paths.css)
-    .pipe(cleanCSS())
-    .pipe(dest('prod/styles'));
-};
-
-const minifyJS = () => {
-  return src(paths.js)
-    .pipe(babel({ presets: ['@babel/env'] }))
-    .pipe(terser())
-    .pipe(dest('prod/scripts'));
-};
-
-const copyHTML = () => {
-  return src(paths.html)
-    .pipe(dest('prod'));
-};
-
-exports.build = series(
-  cleanProd,
-  parallel(minifyCSS, minifyJS, copyHTML)
-);
+gulp.task("default", gulp.series("dev"));
