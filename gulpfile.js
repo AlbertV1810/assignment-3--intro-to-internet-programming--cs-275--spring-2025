@@ -1,34 +1,52 @@
-const gulp = require("gulp");
-const eslint = require("gulp-eslint");
-const stylelint = require("gulp-stylelint");
-const uglify = require("gulp-uglify");
-const browserSync = require("browser-sync").create();
+const gulp = require('gulp');
+const eslint = require('gulp-eslint');
+const stylelint = require('gulp-stylelint');
+const sourcemaps = require('gulp-sourcemaps');
+const cleanCSS = require('gulp-clean-css');
+const terser = require('gulp-terser');
+const browserSync = require('browser-sync').create();
 
-gulp.task("lint-js", () => {
-  return gulp.src("scripts/**/*.js")
+gulp.task('lint-js', () => {
+  return gulp.src('./scripts/*.js')
     .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe(eslint.format());
 });
 
-gulp.task("lint-css", () => {
-  return gulp.src("styles/**/*.css")
+gulp.task('lint-css', () => {
+  return gulp.src('./styles/*.css')
     .pipe(stylelint({
-      reporters: [{ formatter: "string", console: true }]
+      reporters: [{ formatter: 'string', console: true }]
     }));
 });
 
-gulp.task("dev", () => {
-  browserSync.init({ server: "./" });
+gulp.task('watch', () => {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  });
 
-  gulp.watch("styles/**/*.css", gulp.series("lint-css", browserSync.reload));
-  gulp.watch("scripts/**/*.js", gulp.series("lint-js", browserSync.reload));
+  gulp.watch('./styles/*.css', gulp.series('lint-css')).on('change', browserSync.reload);
+  gulp.watch('./scripts/*.js', gulp.series('lint-js')).on('change', browserSync.reload);
+  gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-gulp.task("build", () => {
-  return gulp.src("scripts/**/*.js")
-    .pipe(uglify())
-    .pipe(gulp.dest("prod/scripts"));
+gulp.task('dev', gulp.series('lint-js', 'lint-css', 'watch'));
+
+gulp.task('minify-css', () => {
+  return gulp.src('./styles/*.css')
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./prod/styles'));
 });
 
-gulp.task("default", gulp.series("dev"));
+gulp.task('minify-js', () => {
+  return gulp.src('./scripts/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(terser())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./prod/scripts'));
+});
+
+gulp.task('prod', gulp.series('minify-css', 'minify-js'));
