@@ -1,9 +1,8 @@
-const showModalButton = document.querySelector('#js-triggers a[href="#"]'); // "Show Modal" link
-const modalPanel = document.querySelector('.modal-panel'); // Modal background layer
-const modalContentPane = document.querySelector('.modal-content-pane'); // Modal content container
+const showModalButton = document.querySelector('#js-triggers li:nth-child(2) a');
+const modalPanel = document.querySelector('.modal-panel');
+const modalContentPane = document.querySelector('.modal-content-pane');
 
 const showModal = () => {
-    console.log('Modal should be visible');
   modalPanel.style.display = `block`;
 };
 
