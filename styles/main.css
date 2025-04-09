@@ -1,0 +1,34 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 500ms ease-in-out;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.close-btn {
+  font-size: 30px;
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: black;
+}
