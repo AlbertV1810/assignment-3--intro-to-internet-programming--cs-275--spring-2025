@@ -5,10 +5,10 @@
   transform: translate(-50%, -50%);
   display: none;
   z-index: 1001;
-  background-color: white;
+  background-color: rgb(21, 22, 59);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(16, 172, 63, 0.2);
 }
 
 .modal-background {
@@ -19,5 +19,5 @@
   height: 100%;
   display: none;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(153, 34, 34, 0.884);
 }
