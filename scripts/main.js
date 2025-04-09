@@ -1,19 +1,26 @@
-const modalTrigger = document.querySelector('#js-triggers li a[href="#"]:nth-child(2)');
-const modalPanel = document.querySelector('.modal-panel');
+document.addEventListener('DOMContentLoaded', function() {
+    const modalTrigger = document.querySelector('#js-triggers li a[href="#"]:nth-child(2)');
+    const modalPanel = document.querySelector('.modal-panel');
 
-modalTrigger.addEventListener('click', (e) => {
-  e.preventDefault();
-  modalPanel.style.display = 'block';
-});
+    if (modalTrigger && modalPanel) {
 
-modalPanel.addEventListener('click', (e) => {
-  if (e.target === modalPanel) {
-    modalPanel.style.display = 'none';
-  }
-});
+      modalTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalPanel.style.display = 'block';
+      });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    modalPanel.style.display = 'none';
-  }
-});
+      modalPanel.addEventListener('click', (e) => {
+        if (e.target === modalPanel) {
+          modalPanel.style.display = 'none';
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          modalPanel.style.display = 'none';
+        }
+      });
+    } else {
+      console.error("Modal trigger or modal panel not found.");
+    }
+  });
