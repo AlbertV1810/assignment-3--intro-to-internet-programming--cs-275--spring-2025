@@ -3,8 +3,8 @@ const modalPanel = document.querySelector('.modal-panel'); // Modal background l
 const modalContentPane = document.querySelector('.modal-content-pane'); // Modal content container
 
 const showModal = () => {
+    console.log('Modal should be visible');
   modalPanel.style.display = `block`;
-  console.log('Modal should be visible now');
 };
 
 const hideModal = (event) => {
