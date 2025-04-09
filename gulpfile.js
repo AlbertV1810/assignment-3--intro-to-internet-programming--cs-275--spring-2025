@@ -59,3 +59,35 @@ exports.default = series(
   serve,
   watchFiles
 );
+
+const clean = require('gulp-clean');
+const cleanCSS = require('gulp-clean-css');
+const terser = require('gulp-terser');
+
+const cleanProd = () => {
+  return src('prod', { read: false, allowEmpty: true })
+    .pipe(clean());
+};
+
+const minifyCSS = () => {
+  return src(paths.css)
+    .pipe(cleanCSS())
+    .pipe(dest('prod/styles'));
+};
+
+const minifyJS = () => {
+  return src(paths.js)
+    .pipe(babel({ presets: ['@babel/env'] }))
+    .pipe(terser())
+    .pipe(dest('prod/scripts'));
+};
+
+const copyHTML = () => {
+  return src(paths.html)
+    .pipe(dest('prod'));
+};
+
+exports.build = series(
+  cleanProd,
+  parallel(minifyCSS, minifyJS, copyHTML)
+);
