@@ -57,10 +57,10 @@ nav {
   left: 50%;
   justify-content: center;
   transform: translateX(-50%);
-  display: none;
+  display: flex;
   background-color: #0a5c5f;
   z-index: 1000;
-  padding: 5px;
+  padding: 10px;
   width: auto;
 }
 
