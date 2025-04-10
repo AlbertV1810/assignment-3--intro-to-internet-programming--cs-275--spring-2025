@@ -59,12 +59,6 @@ nav ul li:hover > ul {
   display: block;
 }
 
-/*.side-tray {
-  width: auto;
-
-
-}*/
-
 .side-tray ul ul {
   display: none;
 }
