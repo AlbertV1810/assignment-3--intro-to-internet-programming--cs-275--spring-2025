@@ -31,10 +31,11 @@ header {
 }
 
 #js-triggers {
+  right: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: block;
 }
 
 #js-triggers li a {
