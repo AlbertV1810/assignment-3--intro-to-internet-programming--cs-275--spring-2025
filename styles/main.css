@@ -63,6 +63,12 @@ nav {
   width: auto;
 }
 
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 nav ul ul {
   display: none;
 }
