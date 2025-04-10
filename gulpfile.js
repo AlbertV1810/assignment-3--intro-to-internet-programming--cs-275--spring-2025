@@ -49,11 +49,6 @@ gulp.task('minify-js', () => {
     .pipe(gulp.dest('./prod/scripts'));
 });
 
-gulp.task('images', () => {
-  return gulp.src('./images/**/*')
-    .pipe(gulp.dest('./prod/images'));
-});
-
 gulp.task('html', () => {
   return gulp.src('./*.html')
     .pipe(gulp.dest('./prod'));
