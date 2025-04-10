@@ -54,6 +54,6 @@ gulp.task('html', () => {
     .pipe(gulp.dest('./prod'));
 });
 
-gulp.task('build', gulp.parallel('minify-css', 'minify-js', 'images', 'html'));
+gulp.task('build', gulp.parallel('minify-css', 'minify-js', 'html'));
 
 gulp.task('prod', gulp.series('build'));
