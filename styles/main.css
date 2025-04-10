@@ -56,6 +56,7 @@ nav {
   top: 10%;
   left: 40%;
   display: none;
+  width: auto;
   background-color: #0a5c5f;
   /*position: absolute;
   top: 10%;
@@ -64,7 +65,7 @@ nav {
   display: none;
   z-index: 1000;
   padding: 10px;
-  width: auto;*/
+  */
 }
 
 nav ul {
