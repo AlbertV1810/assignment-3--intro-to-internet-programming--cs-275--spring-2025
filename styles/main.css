@@ -55,7 +55,6 @@ nav {
   position: absolute;
   top: 10%;
   left: 50%;
-  justify-content: center;
   transform: translateX(-50%);
   display: none;
   background-color: #0a5c5f;
