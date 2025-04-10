@@ -107,8 +107,8 @@ nav ul li a {
 }
 
 .side-tray {
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: 10%;
   left: 0;
   background-color: #0a5c5f;
   width: 40%;
