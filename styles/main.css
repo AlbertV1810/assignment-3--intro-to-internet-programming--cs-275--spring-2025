@@ -39,7 +39,7 @@ nav {
   top: 0;
   left: 0;
   width: 250px;
-  height: 50px;
+  height: 25%;
   transform: none;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
