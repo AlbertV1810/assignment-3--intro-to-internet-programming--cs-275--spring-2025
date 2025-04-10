@@ -57,6 +57,22 @@ nav ul li:hover > ul {
   display: block;
 }
 
+nav ul li {
+  list-style: none; /* Remove bullet points */
+  margin: 0; /* Remove spacing between list items */
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #b35d68;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #333;
+  margin-bottom: 5px;
+}
+
 .side-tray ul ul {
   display: none;
 }
