@@ -54,7 +54,7 @@ header {
 nav {
   position: absolute;
   top: 10%;
-  align-content: center;
+  left: 50%;
   display: none;
   background-color: #0a5c5f;
 }
