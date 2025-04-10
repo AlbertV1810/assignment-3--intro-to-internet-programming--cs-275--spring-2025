@@ -56,12 +56,12 @@ nav {
   top: 10%;
   left: 40%;
   display: none;
+  background-color: #0a5c5f;
   /*position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
   display: none;
-  background-color: #0a5c5f;
   z-index: 1000;
   padding: 10px;
   width: auto;*/
