@@ -53,9 +53,18 @@ header {
 
 nav {
   position: absolute;
-  top: 50px;
-  left: 0;
-  display: block;
+  top: 10%;
+  left: 50%;
+  display: none;
+  /*position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  background-color: #0a5c5f;
+  z-index: 1000;
+  padding: 10px;
+  width: auto;*/
 }
 
 nav ul {
