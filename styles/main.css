@@ -40,6 +40,7 @@ header {
 
 #js-triggers li a {
   color: white;
+  right: 10px;
   text-decoration: none;
   padding: 10px 15px;
   display: inline-block;
