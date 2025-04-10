@@ -22,10 +22,12 @@
 }
 
 header {
+  width: 100%;
   background-color: #0a5c5f;
-  padding: 15px;
-  text-align: center;
-  border-bottom: 2px solid #333;
+  padding: 0;
+  margin: 0;
+  border: none;
+  position: relative;
 }
 
 #js-triggers li a {
@@ -58,8 +60,8 @@ nav ul li:hover > ul {
 }
 
 nav ul li {
-  list-style: none; /* Remove bullet points */
-  margin: 0; /* Remove spacing between list items */
+  list-style: none;
+  margin: 0;
 }
 
 nav ul li a {
