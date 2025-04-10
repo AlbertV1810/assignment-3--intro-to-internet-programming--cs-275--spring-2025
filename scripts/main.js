@@ -21,6 +21,7 @@ document.addEventListener('keydown', hideModal);
 //
 const showMenuButton = document.querySelector('#js-triggers li:nth-child(1) a');
 const navMenu = document.querySelector('nav');
+
 showMenuButton.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
@@ -39,7 +40,6 @@ const showMenu = () => {
     navMenu.classList.add('side-tray');
   }
 };
-
 
 const hideMenu = () => {
   navMenu.style.display = `none`;
