@@ -56,7 +56,7 @@ nav {
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  display: none;
+  display: block;
   background-color: #0a5c5f;
   z-index: 1000;
   padding: 10px;
