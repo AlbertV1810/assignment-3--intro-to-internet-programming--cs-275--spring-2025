@@ -96,6 +96,10 @@ nav ul li a {
   margin-bottom: 5px;
 }
 
+.side-tray ul {
+  align-items: center;
+}
+
 .side-tray ul ul {
   display: none;
 }
