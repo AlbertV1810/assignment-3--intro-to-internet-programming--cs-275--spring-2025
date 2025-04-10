@@ -30,6 +30,13 @@ header {
   position: relative;
 }
 
+#js-triggers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
 #js-triggers li a {
   color: white;
   text-decoration: none;
