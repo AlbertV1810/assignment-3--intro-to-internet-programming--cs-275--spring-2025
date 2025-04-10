@@ -69,7 +69,7 @@ nav ul li:hover > ul {
   display: none;
 }
 
-.side-tray {
+/*.side-tray {
   position: fixed;
   top: 0;
   left: 0;
@@ -77,7 +77,7 @@ nav ul li:hover > ul {
   height: 25%;
   transform: none;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-}
+}*/
 
 @media (max-width: 736px) {
   nav {
