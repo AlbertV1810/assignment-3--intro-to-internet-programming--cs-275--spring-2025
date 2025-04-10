@@ -31,6 +31,7 @@ header {
 }
 
 #js-triggers {
+  position: absolute;
   right: 10px;
   list-style: none;
   padding: 0;
@@ -40,7 +41,6 @@ header {
 
 #js-triggers li a {
   color: white;
-  right: 10px;
   text-decoration: none;
   padding: 10px 15px;
   display: inline-block;
