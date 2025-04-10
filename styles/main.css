@@ -27,6 +27,7 @@ header {
   justify-content: flex-end;
   width: 100%;
   background-color: #0a5c5f;
+  padding: 10px;
 }
 
 #js-triggers {
