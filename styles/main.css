@@ -41,13 +41,12 @@ header {
   color: white;
   text-decoration: none;
   padding: 10px 15px;
-  border-radius: 5px;
   display: inline-block;
 }
 
 nav {
   position: absolute;
-  top: 50px;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   display: none;
