@@ -48,5 +48,5 @@ gulp.task('minify-js', () => {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./prod/scripts'));
 });
-
+gulp.task('build', gulp.parallel('scripts', 'styles', 'images', 'html'));
 gulp.task('prod', gulp.series('minify-css', 'minify-js'));
