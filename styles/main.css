@@ -31,7 +31,6 @@ header {
 }
 
 #js-triggers {
-  position: absolute;
   right: 10px;
   list-style: none;
   padding: 0;
