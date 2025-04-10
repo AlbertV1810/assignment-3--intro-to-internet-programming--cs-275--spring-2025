@@ -60,7 +60,7 @@ nav {
   background-color: #0a5c5f;
   z-index: 1000;
   padding: 15px;
-
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
   width: auto;
 }
 
