@@ -48,5 +48,17 @@ gulp.task('minify-js', () => {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./prod/scripts'));
 });
-gulp.task('build', gulp.parallel('scripts', 'styles', 'images', 'html'));
-gulp.task('prod', gulp.series('minify-css', 'minify-js'));
+
+gulp.task('images', () => {
+  return gulp.src('./images/**/*')
+    .pipe(gulp.dest('./prod/images'));
+});
+
+gulp.task('html', () => {
+  return gulp.src('./*.html')
+    .pipe(gulp.dest('./prod'));
+});
+
+gulp.task('build', gulp.parallel('minify-css', 'minify-js', 'images', 'html'));
+
+gulp.task('prod', gulp.series('build'));
