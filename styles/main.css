@@ -28,14 +28,13 @@ header {
   border-bottom: 2px solid #333;
 }
 
-/*#js-triggers li a {
+#js-triggers li a {
   color: white;
   text-decoration: none;
   padding: 10px 15px;
-  background-color: #333;
   border-radius: 5px;
   display: inline-block;
-}*/
+}
 
 nav {
   position: absolute;
