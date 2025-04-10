@@ -107,6 +107,7 @@ nav ul li a {
 
 .side-tray ul li a {
   width: 80%;
+  max-width: 250px;
   text-align: center;
 }
 
