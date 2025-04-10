@@ -97,6 +97,7 @@ nav ul li a {
 }
 
 .side-tray ul {
+  display: flex;
   align-items: center;
 }
 
