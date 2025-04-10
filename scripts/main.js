@@ -21,6 +21,13 @@ document.addEventListener('keydown', hideModal);
 //
 const showMenuButton = document.querySelector('#js-triggers li:nth-child(1) a');
 const navMenu = document.querySelector('nav');
+showMenuButton.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+showSideTrayButton.addEventListener('click', () => {
+    sideTray.classList.toggle('active');
+  });
 
 const showMenu = () => {
   const screenWidth = window.innerWidth;
