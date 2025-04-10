@@ -113,7 +113,6 @@ nav ul li a {
   height: 25%;
   padding: 10px;
   transform: none;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 736px) {
