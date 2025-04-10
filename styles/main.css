@@ -100,6 +100,10 @@ nav ul li a {
   display: none;
 }
 
+.side-tray ul li a {
+  width: 80%;
+}
+
 .side-tray {
   position: fixed;
   top: 0;
